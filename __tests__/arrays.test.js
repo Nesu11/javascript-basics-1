@@ -25,9 +25,12 @@ describe('getNthElement', () => {
     expect(getNthElement(3, array)).toEqual('fox');
   });
 
-  xit('if n is greater than the number of elements, it cycles back to the start', () => {
+  it('if n is greater than the number of elements, it cycles back to the start', () => {
     expect(getNthElement(4, array)).toEqual('cat');
     expect(getNthElement(5, array)).toEqual('dog');
+    expect(getNthElement(10, array)).toEqual('elephant');
+    expect(getNthElement(7, array)).toEqual('fox');
+    
   });
 });
 
@@ -72,7 +75,7 @@ describe('addToArray2', () => {
 });
 
 describe('removeNthElement', () => {
-  xit('removes the element at position n', () => {
+  it('removes the element at position n', () => {
     const array = ['ant', 'bison', 'cockerel', 'duck', 'elephant'];
     removeNthElement(2, array);
     expect(array).toEqual(['ant', 'bison', 'duck', 'elephant']);
@@ -80,7 +83,7 @@ describe('removeNthElement', () => {
 });
 
 describe('numbersToStrings', () => {
-  xit('converts every number in the array to a string', () => {
+  it('converts every number in the array to a string', () => {
     expect(numbersToStrings([1, 2, 3])).toEqual(['1', '2', '3']);
   });
 });

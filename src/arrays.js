@@ -1,23 +1,25 @@
 const getNthElement = (index, array) => {
-  if (index < array.length){ return array[index]}
-};
+  return array[index % array.length];
+  // return array[index];
+}; // n index divided by array.length (in this case 4) the remainder points to new index
 
 const arrayToCSVString = (array) => {
   return array.join(',')// your code here
 };
 
-const csvStringToArray = (string) => {
-  return string.split(',') // your code here
-};
+const csvStringToArray = (string) => string.split(','); // es6
+
 
 const addToArray = (element, array) => {
-array.push(element)// your code here
-};
+  array.push(element);
+}; // your code here
+
 
 const addToArray2 = (element, array) => {
-  return array.concat(element)/*The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.
-
-*/
+  const newArray = [];
+  array.map((firstArrayIndex) => newArray.push(firstArrayIndex));
+  newArray.push(element);
+  return newArray;
 };
 
 const removeNthElement = (index, array) => {
@@ -25,11 +27,13 @@ const removeNthElement = (index, array) => {
 };
 
 const numbersToStrings = (numbers) => {
- return numbers.toString().split(',') // your code here
+  return  numbers.map((num) => num.toString());
 };
+  // map over number arr -> call back (()) -> current value (n/num) -> return each current value as str after mapping
+
 
 const uppercaseWordsInArray = (strings) => {
- return strings.map(strings.toUpperCase) // your code here
+  return strings.map(strings.toUpperCase) // your code here
 };
 
 const reverseWordsInArray = (strings) => {
