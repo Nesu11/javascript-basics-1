@@ -80,7 +80,8 @@ describe('isEqual', () => {
     expect(isEqual('true', 'true')).toBe(true);
     expect(isEqual('true', 'false')).toBe(false);
     expect(isEqual(10, 0)).toBe(false);
-    expect(isEqual(10, 10)).toBe(true);
+    expect(isEqual(10, '10')).toBe(true);
+    expect(isEqual(20, 20)).toBe(true);
   });
 });
 
